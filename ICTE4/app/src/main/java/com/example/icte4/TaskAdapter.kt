@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class TaskAdapter(private val tasks: List<String>) :
     RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
-    // View holder defines how each item is managed in the RecylcerView, inner Class
+    // View holder defines how each item is managed in the RecyclerView, inner Class
     inner class TaskViewHolder (itemView : View) : RecyclerView.ViewHolder(itemView) {
         val taskEditText : EditText = itemView.findViewById(R.id.taskEditText)
         val pickTimeButton : Button = itemView.findViewById(R.id.pickTimeButton)
