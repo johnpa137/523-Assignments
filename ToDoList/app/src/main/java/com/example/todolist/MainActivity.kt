@@ -34,8 +34,9 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = taskAdapter
 
         addTaskButton.setOnClickListener {
-            taskList.add(taskList.size, "Task ${taskList.size + 1}")
-            taskAdapter.notifyItemInserted(taskList.size - 1)
+            val pos = taskList.size
+            taskList.add(pos, "Task ${pos + 1}")
+            taskAdapter.notifyItemInserted(pos)
         }
     }
 }

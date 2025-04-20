@@ -7,10 +7,6 @@
     android:padding="12dp">
     <!-- Task text field which needs to be editable -->
 
-    <!-- Create my button for time picker
-    Button text also shows the selected time after picked
-    -->
-
     <EditText
         android:id="@+id/taskEditText"
         android:layout_width="0dp"
@@ -22,6 +18,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Create my button for time picker
+    Button text also shows the selected time after picked
+    -->
+
     <Button
         android:id="@+id/pickTimeButton"
         android:layout_width="wrap_content"
@@ -30,16 +30,6 @@
         app:layout_constraintTop_toTopOf="parent"
         android:text="Pick a Time" />
 
-    <!-- Create my button for indicating a task is complete -->
-
-    <Button
-        android:id="@+id/doneTaskButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/taskEditText"
-        android:text="Done" />
-
     <!-- Create my button for deleting a task off the list -->
 
     <Button
@@ -47,8 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/taskEditText"
-        app:layout_constraintStart_toEndOf="@+id/doneTaskButton"
+        app:layout_constraintEnd_toEndOf="parent"
         android:text="Delete" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

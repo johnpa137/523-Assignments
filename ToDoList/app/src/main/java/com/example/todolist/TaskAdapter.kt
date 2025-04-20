@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 
 import android.widget.Button
-import android.widget.TextView
 import android.widget.EditText
 import androidx.core.widget.doAfterTextChanged
 import androidx.recyclerview.widget.RecyclerView
@@ -19,24 +18,17 @@ class TaskAdapter(private val tasks: MutableList<String>) :
     inner class TaskViewHolder (itemView : View) : RecyclerView.ViewHolder(itemView) {
         val taskEditText : EditText = itemView.findViewById(R.id.taskEditText)
         val pickTimeButton : Button = itemView.findViewById(R.id.pickTimeButton)
-        val doneTaskButton : Button = itemView.findViewById(R.id.doneTaskButton)
         val deleteTaskButton : Button = itemView.findViewById(R.id.deleteTaskButton)
 
         init {
-            // Toggle the strikethrough with clicking the done task button
-            doneTaskButton.setOnClickListener {
+            // Toggle the strikethrough with clicking on a task item
+            taskEditText.setOnClickListener {
                 val isStruckThrough = taskEditText.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG != 0
                 taskEditText.paintFlags = if(isStruckThrough) {
                     taskEditText.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv() // removes it
                 }
                 else {
                     taskEditText.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG // adds it
-                }
-                if (isStruckThrough) {
-                    doneTaskButton.text = "Done"
-                }
-                else {
-                    doneTaskButton.text = "Undone"
                 }
             }
 
@@ -79,6 +71,10 @@ class TaskAdapter(private val tasks: MutableList<String>) :
         // Remove task from list by clicking the delete task button
         holder.deleteTaskButton.setOnClickListener {
             val positionToDelete = holder.adapterPosition
+            // need to reset text due to the recyclerview re-using elements
+            holder.taskEditText.text.clear()
+            holder.pickTimeButton.text = "Pick a Time"
+            // remove tasks after resetting them
             tasks.removeAt(positionToDelete)
             notifyItemRemoved(positionToDelete)
         }
