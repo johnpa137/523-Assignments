@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp">
+    <!-- Task text field which needs to be editable -->
+
+    <!-- Create my button for time picker
+    Button text also shows the selected time after picked
+    -->
+
+    <EditText
+        android:id="@+id/taskEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Task"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/pickTimeButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/pickTimeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Pick a Time" />
+
+    <!-- Create my button for indicating a task is complete -->
+
+    <Button
+        android:id="@+id/doneTaskButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taskEditText"
+        android:text="Done" />
+
+    <!-- Create my button for deleting a task off the list -->
+
+    <Button
+        android:id="@+id/deleteTaskButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/taskEditText"
+        app:layout_constraintStart_toEndOf="@+id/doneTaskButton"
+        android:text="Delete" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
