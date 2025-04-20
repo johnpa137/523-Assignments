@@ -3,4 +3,4 @@ For larger projects for the EE P 523 Mobile Applications class, to be used for s
 
 - ICTE3 : Simple Camera App
 - ICTE4 : Simple List App (fixed number of items)
-- ToDoList : HW1 (WIP)
+- ToDoList : a to do list (HW1)
