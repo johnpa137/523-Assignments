@@ -8,6 +8,38 @@
     android:padding="10dp"
     tools:context=".ui.dashboard.DashboardFragment">
 
-    <!-- TODO: Add Text View to display values -->
+    <!-- Step Counter -->
+    <TextView
+        android:id="@+id/stepCountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Steps: 0"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <!-- Accelerometer -->
+    <TextView
+        android:id="@+id/accelerometerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Accelerometer:\nX: 0.00\nY: 0.00\nZ: 0.00"
+        android:textSize="18sp"
+        android:layout_below="@id/stepCountTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+
+    <!-- Proximity Sensor -->
+    <TextView
+        android:id="@+id/proximityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Proximity: 0.00 cm"
+        android:textSize="18sp"
+        android:layout_below="@id/accelerometerTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
 
 </RelativeLayout>

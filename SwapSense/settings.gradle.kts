@@ -20,4 +20,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "SwapSense"
-include(":app")
+include(":app","opencv")
+ 

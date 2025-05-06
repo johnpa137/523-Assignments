@@ -2,21 +2,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Add camera feature (optional) -->
-    <uses-feature
-        android:name="android.hardware.camera"
-        android:required="false" />
-    <!-- Add camera permission -->
-    <uses-permission
-        android:name="android.permission.CAMERA" />
+    <!-- Optional: Add camera feature -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
 
-    <!-- Add permissions to access media and storage -->
-    <!-- Hint: include permissions for both read and write, and account for SDK version differences -->
-    <uses-permission
-        android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission
-        android:name="android.permission.READ_MEDIA_IMAGES" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- Camera permission -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Permissions to access media and storage -->
+    <!-- Required for Android 13+ (API 33+) -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+
+    <!-- Required for Android 10-12 (API 29-32) -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+
+    <!-- Optional: Step counter feature for fitness tracking -->
+    <uses-feature android:name="android.hardware.sensor.stepcounter" android:required="false" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
 
     <application
         android:allowBackup="true"
@@ -30,19 +35,8 @@
         android:theme="@style/Theme.SwapSense"
         tools:targetApi="31">
 
-        <provider
-            android:authorities="${applicationId}.provider"
-            android:name="androidx.core.content.FileProvider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
-        </provider>
-
-        <!-- Declare MainActivity with correct intent-filter to launch the app -->
-        <activity
-            android:name=".MainActivity"
+        <!-- Declare MainActivity with intent-filter to launch the app -->
+        <activity android:name="MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

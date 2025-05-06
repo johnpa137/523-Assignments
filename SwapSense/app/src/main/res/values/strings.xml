@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">SwapSense</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Sensors</string>
+    <string name="title_notifications">Draw</string>
+    <string name="title_emotion_detection">Take Photo</string>
+
 </resources>

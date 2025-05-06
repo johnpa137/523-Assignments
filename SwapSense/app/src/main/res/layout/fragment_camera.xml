@@ -7,11 +7,30 @@
     android:orientation="vertical"
     android:gravity="center"
     android:paddingHorizontal="8dp"
-    android:paddingBottom="60dp">
+    android:paddingBottom="60dp"
+    tools:context=".ui.Camera.CameraFragment">
 
-    <!-- TODO: Add PreviewView to view image -->
-    <!-- TODO: Add Button to switch camera -->
-    <!-- TODO: Add Button to capture photo -->
+    <!-- Add PreviewView to view image -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="16dp" />
 
+    <!-- Add Button to switch camera -->
+    <Button
+        android:id="@+id/switchCameraButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Switch Camera"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Add Button to capture photo -->
+    <Button
+        android:id="@+id/captureButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Capture" />
 
 </LinearLayout>
