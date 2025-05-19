@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Location Input & Search Button in Same Row -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Location Input Field -->
+            <EditText
+                android:id="@+id/editTextLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Enter Location"
+                android:padding="12dp"
+                android:background="@drawable/edit_text_bg"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"/>
+
+            <!-- Search Button -->
+            <Button
+                android:id="@+id/btnSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#007BFF"
+                android:gravity="center"
+                android:text="Search"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+        <!-- Weather Information Card -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/topGraphic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:id="@+id/cityContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginBottom="10sp">
+
+                    <!-- City Name -->
+                    <TextView
+                        android:id="@+id/txtCityName"
+                        android:text="Unknown"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#333"/>
+
+                    <!-- Current Temperature -->
+                    <TextView
+                        android:id="@+id/txtCurrentTemp"
+                        android:text="NaN°F"
+                        android:textSize="36sp"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#333"/>
+
+                    <!-- Weather Condition -->
+                    <TextView
+                        android:id="@+id/txtCondition"
+                        android:text="Incomprehensible"
+                        android:textSize="18sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#666"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imgWeatherIcon"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_marginVertical="10sp"
+                    android:layout_marginLeft="50sp"
+                    android:contentDescription="Weather icon"/>
+
+            </LinearLayout>
+
+            <!-- Min and Max Temperature -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/txtMinTemp"
+                    android:text="Min: -459.67°F"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#666"/>
+
+                <TextView
+                    android:id="@+id/txtMaxTemp"
+                    android:text="Max: 1E32°F"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#666"
+                    android:layout_marginStart="16dp"/>
+            </LinearLayout>
+
+            <!-- Sunrise and Sunset Times -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <!-- Sunrise -->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:src="@drawable/ic_sunrise"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"/>
+
+                    <TextView
+                        android:id="@+id/txtSunrise"
+                        android:text="Sunrise: 0:00 AM"
+                        android:textSize="14sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#333"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <!-- Sunset -->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <ImageView
+                        android:src="@drawable/ic_sunset"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"/>
+
+                    <TextView
+                        android:id="@+id/txtSunset"
+                        android:text="Sunset: 13:00 PM"
+                        android:textSize="14sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#333"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Wind, Pressure, Humidity -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <!-- Wind Speed -->
+                <TextView
+                    android:id="@+id/txtWindSpeed"
+                    android:text="💨 Wind: 186000 mph"
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#666"/>
+
+                <!-- Pressure -->
+                <TextView
+                    android:id="@+id/txtPressure"
+                    android:text="🌡️ Pressure: 0 hPa"
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#666"
+                    android:layout_marginTop="8dp"/>
+
+                <!-- Humidity -->
+                <TextView
+                    android:id="@+id/txtHumidity"
+                    android:text="💧 Humidity: 0%"
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#666"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
