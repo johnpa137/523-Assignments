@@ -1,0 +1,56 @@
+<svg width="412" height="917" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="412" height="917" fill="#ffffff" />
+
+  <!-- Top Metrics Section -->
+  <rect x="0" y="0" width="412" height="150" fill="#f5f5f5" />
+  
+  <text x="20" y="30" font-size="14" fill="#888">Pace</text>
+  <text x="20" y="55" font-size="26" font-weight="bold" fill="#333">5:45 /km</text>
+
+  <text x="160" y="30" font-size="14" fill="#888">Steps</text>
+  <text x="160" y="55" font-size="26" font-weight="bold" fill="#333">3,482</text>
+
+  <text x="300" y="30" font-size="14" fill="#888">Heart Rate</text>
+  <text x="300" y="55" font-size="26" font-weight="bold" fill="#e74c3c">142 bpm</text>
+
+  <text x="20" y="100" font-size="14" fill="#888">Distance</text>
+  <text x="20" y="125" font-size="26" font-weight="bold" fill="#333">4.2 km</text>
+
+  <!-- Main Content Placeholder (Map or Graph) -->
+  <rect x="0" y="150" width="412" height="667" fill="#e0e0e0" />
+  <text x="140" y="490" font-size="16" fill="#888">Map / Graph View</text>
+
+  <!-- Bottom Navigation Bar -->
+  <rect x="0" y="817" width="412" height="100" fill="#fafafa" stroke="#ddd" />
+
+  <!-- Sensors Tab -->
+  <g transform="translate(60, 835)">
+    <!-- Heart Icon -->
+    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
+             2 6.5 3.5 5 5.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 
+             14.96 5 16.5 5 18.5 5 20 6.5 20 8.5c0 3.78-3.4 6.86-8.55 
+             11.54L12 21.35z"
+          fill="#666" transform="scale(1.5)" />
+    <text x="-5" y="35" font-size="12" fill="#333">Sensors</text>
+  </g>
+
+  <!-- Map Tab -->
+  <g transform="translate(170, 835)">
+    <!-- Location Pin Icon -->
+    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 
+             7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5
+             s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"
+          fill="#666" transform="scale(1.5)" />
+    <text x="-5" y="35" font-size="12" fill="#333">Map</text>
+  </g>
+
+  <!-- Graph Tab -->
+  <g transform="translate(290, 835)">
+    <!-- Line Chart Icon -->
+    <path d="M3 17h18v2H3v-2zm2-5l4-4 3 3 5-5 3 3v4h-2v-2.17l-1-1-5 
+             5-3-3-3 3-1.59-1.58L5 12z"
+          fill="#666" transform="scale(1.5)" />
+    <text x="-5" y="35" font-size="12" fill="#333">Graphs</text>
+  </g>
+</svg>
